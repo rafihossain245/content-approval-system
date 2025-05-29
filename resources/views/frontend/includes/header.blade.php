@@ -199,7 +199,7 @@
                         <li>
                             <a
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                href="{{ route("frontend.users.profile") }}"
+                                href="{{ route("frontend.dashboard") }}"
                                 role="menuitem"
                             >
                                 <div class="inline-flex items-center">
@@ -220,7 +220,7 @@
                                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4c.267 0 .529 .026 .781 .076" />
                                         <path d="M19 16l-2 3h4l-2 3" />
                                     </svg>
-                                    {{ Auth::user()->name }}
+                                    {{ __('Dashboard') }}
                                 </div>
                             </a>
                         </li>

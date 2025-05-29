@@ -118,7 +118,7 @@
 
             {{ html()->label($field_lable, $field_name)->class("form-label")->for($field_name) }}
             {!! field_required($required) !!}
-            {{ html()->select($field_name, $field_options, $selected)->placeholder($field_placeholder)->class("form-select select2-category")->attributes(["$required"]) }}
+            {{ html()->select($field_name, $field_options, $selected)->placeholder($field_placeholder)->class("form-select select2-category-admin")->attributes(["$required"]) }}
         </div>
     </div>
     <div class="col-12 col-sm-4 mb-3">
@@ -364,7 +364,7 @@
                 document.querySelector('.select2-container--open .select2-search__field').focus();
             });
 
-            $('.select2-category').select2({
+            $('.select2-category-admin').select2({
                 theme: 'bootstrap-5',
                 placeholder: '@lang("Select an option")',
                 minimumInputLength: 2,

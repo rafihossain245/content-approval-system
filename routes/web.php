@@ -37,6 +37,8 @@ Route::get('privacy', Privacy::class)->name('privacy');
 Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.'], function () {
     Route::get('/', 'FrontendController@index')->name('index');
 
+    Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
+
     Route::group(['middleware' => ['auth']], function () {
         /*
         *

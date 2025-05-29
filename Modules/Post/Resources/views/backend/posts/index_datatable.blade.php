@@ -64,10 +64,12 @@
 @endpush
 
 @push("after-scripts")
-    <!-- DataTables Core and Extensions -->
-    <script type="module" src="{{ asset("vendor/datatable/datatables.min.js") }}"></script>
 
-    <script type="module">
+<!-- DataTables Core and Extensions -->
+<script type="module" src="{{ asset("vendor/datatable/datatables.min.js") }}"></script>
+
+<script type="module">
+        
         $('#datatable').DataTable({
             processing: true,
             serverSide: true,

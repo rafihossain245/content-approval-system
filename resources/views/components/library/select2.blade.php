@@ -11,12 +11,13 @@
             href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css"
         />
     @endif
+    <link rel="stylesheet" href="{{ asset('assets/css/select2-custom.css') }}" />
 @endpush
 
 @push("after-scripts")
-    <script type="module" src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <script type="module">
+    <script>
         $(document).ready(function () {
             $('.select2').select2({
                 theme: 'bootstrap-5',

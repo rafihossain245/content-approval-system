@@ -87,6 +87,12 @@ class UserController extends Controller
      *
      * @throws ModelNotFoundException If the user profile is not found.
      */
+
+    public function dashboard()
+    {
+        return view("frontend.users.dashboard.home.index");
+    }
+
     public function profile(Request $request, $username = null)
     {
         $username = ($username == null) ? auth()->user()->username : $username;
@@ -105,7 +111,9 @@ class UserController extends Controller
 
         $meta_page_type = 'profile';
 
-        return view("frontend.{$module_name}.profile", compact('module_name', 'module_name_singular', "{$module_name_singular}", 'module_icon', 'module_action', 'module_title', 'body_class', 'meta_page_type'));
+        // dd(44);
+
+        return view("frontend.{$module_name}.dashboard.home.index", compact('module_name', 'module_name_singular', "{$module_name_singular}", 'module_icon', 'module_action', 'module_title', 'body_class', 'meta_page_type'));
     }
 
     /**

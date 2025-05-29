@@ -54,7 +54,7 @@ class CategoriesController extends BackendBaseController
             'meta_description' => 'nullable',
             'meta_keyword' => 'nullable',
             'order' => 'nullable|integer',
-            'status' => 'nullable|max:191',
+            'status' => ['required', 'string', Rule::enum(CategoryStatus::class)],
         ]);
 
         $$module_name_singular = $module_model::create($request->except('image'));

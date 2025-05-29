@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class BaseModel extends Model implements HasMedia
@@ -235,6 +236,6 @@ class BaseModel extends Model implements HasMedia
      */
     public function scopeActive(Builder $query): void
     {
-        $query->where('status', '=', 1);
+        $query->where('status', '=', 'Active');
     }
 }

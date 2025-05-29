@@ -73,6 +73,29 @@ if (! function_exists('label_case')) {
     }
 }
 
+if (! function_exists('active_menu')) {
+    
+    function active_menu($url)
+    {
+        return $url == request()->path() ? 'active' : '';
+    }
+}
+
+if (! function_exists('moduleExists')) {
+    
+    function moduleExists($name): bool
+    {
+        $module_status = json_decode(file_get_contents(__DIR__.'/../modules_statuses.json'));
+        $folderPath = base_path('./Modules'.DIRECTORY_SEPARATOR .$name); 
+        if(file_exists($folderPath) && is_dir($folderPath)){
+            return property_exists($module_status,$name) ? $module_status->$name : false;
+        }
+        return false;
+    }
+}
+
+
+
 /*
  *
  * show_column_value
